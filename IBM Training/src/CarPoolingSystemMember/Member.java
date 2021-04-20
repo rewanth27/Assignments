@@ -11,6 +11,14 @@ public class Member
   private Date licenceStartDate;
   private Date licenceExpiryDate;
   
+	/*
+	 * private ArrayList<MemberCar> carList;
+	 * 
+	 * public Member(ArrayList<MemberCar> carList) {
+	 * 
+	 * this.carList = carList; }
+	 */
+
   public Member() {
   }
   
