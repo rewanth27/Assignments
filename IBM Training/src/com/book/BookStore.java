@@ -2,47 +2,61 @@ package com.book;
 import java.util.*;
 public class BookStore extends Book
 {
+	static ArrayList<Book> a=new ArrayList<Book>();
     static Scanner sc=new Scanner(System.in);
-	public Book addBook(Book b)
+	public void addBook(Book b)
 	{
-	  Book book=b;
-	  return book;
+	   a.add(b);
 	}
-	public void searchByTitle(String key,Book book[])
-	{
-	  boolean flag=false;
-	  for(int i=0; i<book.length; i++)
-	  {
-		  if(book[i].getTitle().equals(key))
-		  {
-			  System.out.print(book[i]);
-			  flag=true;
-			  break;
-		  }
-	  }
-	  if(flag==false)
-		  System.out.println("Not Found");
-	}
-	public void searchByAuthor(String author,Book book[])
+	public void searchByTitle(String key)
 	{
 		boolean flag=false;
-		  for(int i=0; i<book.length; i++)
-		  {
-			  if(book[i].getAuthor().equals(author))
-			  {
-				  System.out.print(book[i]);
-				  flag=true;
-				  break;
-			  }
-		  }
-		  if(flag==false)
-			  System.out.println("Not FOund");
-	}
-	public void displayAll(Book book[])
-	{
-		for(int i=0; i<book.length; i++)
+		for(int i=0; i<a.size(); i++)
 		{
-			System.out.println(book[i]);
+			if(a.get(i).getTitle().equalsIgnoreCase(key))
+			{
+				System.out.println(a.get(i));
+				flag=true;
+			}
+			if(flag==false)
+				try
+			{
+				throw new InvalidBookException();
+			}
+			catch(InvalidBookException e)
+			{
+				e.getMessage();
+			}
+		}
+	}
+	public void searchByAuthor(String author)
+	{
+		boolean flag=false;
+		for(int i=0; i<a.size(); i++)
+		{
+			if(a.get(i).getAuthor().equals(author))
+			{
+			System.out.println(a.get(i));
+			flag=true;
+			}
+		}
+		if(flag==false)
+		{
+			try
+			{
+				throw new InvalidBookException();
+			}
+			catch(InvalidBookException e)
+			{
+				e.getMessage();
+			}
+		}
+	}
+	public void displayAll()
+	{
+		for(int i=0; i<a.size(); i++)
+		{
+			System.out.println(a.get(i));
 		}
 	}
 }

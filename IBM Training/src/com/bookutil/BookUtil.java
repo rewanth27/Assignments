@@ -1,7 +1,6 @@
 package com.bookutil;
 import  com.book.*;
 import java.util.*;
-@SuppressWarnings("serial")
 public class BookUtil
 {
   static Scanner sc=new Scanner(System.in);
@@ -40,17 +39,18 @@ public class BookUtil
 			System.exit(0);
 		}
 		Book book=new Book(bookId, title, author,category, price);
-			b[i]=bs.addBook(book);
+			bs.addBook(book);
 				
 	}
 	
 	System.out.println("Enter the title of book you want to search");
 	String title=sc.next();
-	bs.searchByTitle(title, b);
+	bs.searchByTitle(title);
 	
 	System.out.println("Enter the author of book you want to search");
 	String author=sc.next();
-	bs.searchByAuthor(author, b);
-
+	bs.searchByAuthor(author);
+ 
+	bs.displayAll();
   }
 }
