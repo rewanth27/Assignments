@@ -1,5 +1,6 @@
 package ExceptionHandlingAssignments;
 import java.util.*;
+@SuppressWarnings("serial")
 public class TestCustomer extends InvalidInputException
 {
   static Scanner sc=new Scanner(System.in);

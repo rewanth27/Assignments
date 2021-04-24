@@ -18,7 +18,7 @@ public String getDob() {
 public void setDob(String dob) {
 	this.dob = dob;
 }
-public int calculateAge(String dob) throws InvalidInputException
+public int calculateAge(String dob)
   {
 	  String y="";
 	  char ch[]=dob.toCharArray();
